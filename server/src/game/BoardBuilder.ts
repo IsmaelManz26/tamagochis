@@ -46,7 +46,11 @@ export class BoardBuilder {
       const y = Math.floor(Math.random() * this.board.size);
       // Evitar colocar arbustos en las posiciones de los jugadores y otros arbustos
       // si la posicion esta libre 'some' devuelve false y agrega de nuevo el objeto arbusto
-      if (!this.board.elements.some((e) => e.x === x && e.y === y)) {
+      if (
+        !this.board.elements.some(
+          (e) => Math.abs(e.x - x) <= 1 && Math.abs(e.y - y) <= 1
+        )
+      ) {
         this.board.elements.push({ x, y, type: "bush" });
         bushesAdded++;
       }
