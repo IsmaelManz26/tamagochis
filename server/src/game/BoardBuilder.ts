@@ -29,21 +29,13 @@ export class BoardBuilder {
     //             this.board.elements.push({x : i, y : j})
     //         }
 
-    this.board.elements.push({ x: 0, y: 0, type: "player-1" });
-    this.board.elements.push({
-      x: 0,
-      y: this.board.size - 1,
-      type: "player-2",
-    });
-    this.board.elements.push({
-      x: this.board.size - 1,
-      y: 0,
-      type: "player-3",
-    });
+    this.board.elements.push({ x: 0, y: 0, type: "player" });
+    this.board.elements.push({ x: 0, y: this.board.size - 1, type: "player" });
+    this.board.elements.push({ x: this.board.size - 1, y: 0, type: "player" });
     this.board.elements.push({
       x: this.board.size - 1,
       y: this.board.size - 1,
-      type: "player-4",
+      type: "player",
     });
 
     // Añadir arbustos en posiciones aleatorias
