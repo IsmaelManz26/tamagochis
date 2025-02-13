@@ -13,7 +13,7 @@ export class GameService {
     #state = null;
     #parallel = null;
 
-    #numBushes = 6;
+    // #numBushes = 6;
 
     #actionsList = {
         "NEW_PLAYER" : this.do_newPlayer.bind(this),
@@ -61,8 +61,8 @@ export class GameService {
     };
 
     async do_newBoard(payload) {
-        payload.numBushes = this.#numBushes;
-        console.log("numero de arbustos: " + payload.numBushes);
+        // payload.numBushes = this.#numBushes;
+        // console.log("numero de arbustos: " + payload.numBushes);
         console.log("ha llegado un tablero nuevo");
         this.#board.build(payload);
         this.#ui.drawBoard(this.#board.map);

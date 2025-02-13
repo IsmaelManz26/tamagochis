@@ -54,7 +54,11 @@ export class ServerService {
                 const doType = this.inputMessage.find(item => item.type == data.type);
                 if (doType !== undefined) {
                     doType.do(data);
-                }
+                }   
+                // else if (data.type === "NUM_BUSHES") {
+                //     console.log("Número de arbustos recibido:", data.content);
+                //     // Aquí puedes manejar el número de arbustos como desees
+                // }
             })
 
             socket.on('disconnect', () => {

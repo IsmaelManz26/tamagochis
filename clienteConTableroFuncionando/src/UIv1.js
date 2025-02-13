@@ -29,9 +29,10 @@ UIv1.drawBoard = (board) => {
         base.appendChild(tile);
         anime({
           targets: tile,
-          opacity: [0, 1],
-          duration: Math.random() * 8000 + 1000,
-          easing: "easeInOutQuad",
+          opacity: [1],
+          // opacity: [0, 1],
+          // duration: Math.random() * 8000 + 1000,
+          // easing: "easeInOutQuad",
         });
       })
     );
