@@ -3,7 +3,7 @@ import { Board } from "./entities/Board.js";
 export class BoardBuilder {
   private board: Board;
 
-  constructor(payload: { size: number; numBushes: number }) {
+  constructor(payload: { size: number; numBushes: number; players: string[] }) {
     this.board = {
       size: payload.size,
       elements: [],
