@@ -29,13 +29,30 @@ export class BoardBuilder {
     //             this.board.elements.push({x : i, y : j})
     //         }
 
-    this.board.elements.push({ x: 0, y: 0, type: "player" });
-    this.board.elements.push({ x: 0, y: this.board.size - 1, type: "player" });
-    this.board.elements.push({ x: this.board.size - 1, y: 0, type: "player" });
+    // Dentro del constructor, reemplaza la creación de los jugadores por:
+    this.board.elements.push({
+      x: 0,
+      y: 0,
+      type: "player",
+      identificador: payload.players[0],
+    });
+    this.board.elements.push({
+      x: 0,
+      y: this.board.size - 1,
+      type: "player",
+      identificador: payload.players[1],
+    });
+    this.board.elements.push({
+      x: this.board.size - 1,
+      y: 0,
+      type: "player",
+      identificador: payload.players[2],
+    });
     this.board.elements.push({
       x: this.board.size - 1,
       y: this.board.size - 1,
       type: "player",
+      identificador: payload.players[3],
     });
 
     // Añadir arbustos en posiciones aleatorias

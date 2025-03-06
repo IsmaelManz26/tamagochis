@@ -46,7 +46,7 @@ export class GameService {
       [...Array(size)]
         .map(() => Math.floor(Math.random() * 16).toString(16))
         .join("");
-    if (room.players.length == 1) {
+    if (room.occupied && !room.game) {
       // const payload que se pasa al constructor de BoardBuilder y viene de la petición del cliente
       const payload = {
         size: 8,
