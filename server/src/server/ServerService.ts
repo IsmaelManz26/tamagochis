@@ -58,20 +58,17 @@ export class ServerService {
 
     this.io.on("connection", (socket) => {
       socket.emit("connectionStatus", { status: true });
-      GameService.getInstance().addPlayer(
-        GameService.getInstance().buildPlayer(socket)
-      );
-      console.log(`New player: ${socket.id}`);
+      const newPlayer = GameService.getInstance().buildPlayer(socket);
+      GameService.getInstance().addPlayer(newPlayer);
+      console.log(`Nuevo jugador: ${socket.id}`);
+      // Emitir evento de identificación
+      socket.emit("playerIdentification", { identificador: socket.id });
 
       socket.on("message", (data) => {
         const doType = this.inputMessage.find((item) => item.type == data.type);
         if (doType !== undefined) {
           doType.do(data);
         }
-        // else if (data.type === "NUM_BUSHES") {
-        //     console.log("Número de arbustos recibido:", data.content);
-        //     // Aquí puedes manejar el número de arbustos como desees
-        // }
       });
 
       socket.on("disconnect", () => {

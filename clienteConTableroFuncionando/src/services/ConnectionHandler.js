@@ -31,6 +31,9 @@ export const ConnectionHandler = {
         ConnectionHandler.connected = false;
         onDisconnectedCallBack();
       });
+      socket.on("playerIdentification", (data) => {
+        console.log("Identificado como:", data.identificador);
+      });
     });
   },
 };

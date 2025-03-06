@@ -25,6 +25,7 @@ export class GameService {
   public buildPlayer(socket: Socket): Player {
     return {
       id: socket,
+      identificador: socket.id,
       x: 0,
       y: 0,
       state: PlayerStates.Idle,
@@ -50,6 +51,7 @@ export class GameService {
       const payload = {
         size: 8,
         numBushes: 6,
+        players: room.players.map((player, index) => `player${index + 1}`),
       };
       const game: Game = {
         id: "game" + genRanHex(128),
