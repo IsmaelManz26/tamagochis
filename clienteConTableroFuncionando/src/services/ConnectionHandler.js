@@ -33,6 +33,10 @@ export const ConnectionHandler = {
       });
       socket.on("playerIdentification", (data) => {
         console.log("Identificado como:", data.identificador);
+        const playerDiv = document.getElementById("playerId");
+        if (playerDiv) {
+          playerDiv.innerText = "Eres el jugador: " + data.identificador;
+        }
       });
     });
   },
