@@ -40,6 +40,9 @@ UIv1.initControls = () => {
 };
 
 UIv1.drawBoard = (board) => {
+  // asignar el estado del tablero para los botones
+  UIv1.boardState = board;
+
   if (board !== undefined) {
     const base = document.getElementById(UIv1.uiElements.board);
     base.innerHTML = "";
