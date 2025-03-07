@@ -1,5 +1,6 @@
 import { UI_BUILDER } from "./Ui.js";
 import { ELEMENTS } from "./entities/Board.js";
+import { ButtonController } from "./ButtonController.js";
 
 export const UIv1 = UI_BUILDER.init();
 
@@ -32,6 +33,10 @@ UIv1.initControls = () => {
   rotateBtn.id = "rotate-btn";
   rotateBtn.textContent = "Rotar";
   controls.appendChild(rotateBtn);
+
+  // llamo a la funcionalidad de los botones al final de initcontrols
+  // para asegurarme de que los botones ya estan creados
+  ButtonController.init();
 };
 
 UIv1.drawBoard = (board) => {
