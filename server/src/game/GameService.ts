@@ -51,7 +51,7 @@ export class GameService {
       const payload = {
         size: 8,
         numBushes: 6,
-        players: room.players.map((player, index) => `player${index + 1}`),
+        players: room.players.map((player) => player.identificador.toString()),
       };
       const game: Game = {
         id: "game" + genRanHex(128),

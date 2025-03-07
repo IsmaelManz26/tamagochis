@@ -15,7 +15,7 @@
   background-color: green;
 }
 .tile.player {
-  background-image: url("../img/tanque.webp");
+  background-image: url("../img/tanque.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

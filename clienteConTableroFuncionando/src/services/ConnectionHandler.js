@@ -1,5 +1,6 @@
 import { io } from "../../node_modules/socket.io-client/dist/socket.io.esm.min.js";
 import { GameService } from "./GameService.js";
+import { UIv1 } from "../UIv1.js";
 
 export const ConnectionHandler = {
   connected: false,
@@ -33,6 +34,8 @@ export const ConnectionHandler = {
       });
       socket.on("playerIdentification", (data) => {
         console.log("Identificado como:", data.identificador);
+        // Guardo el identificador en UIv1 para usarlo luego
+        UIv1.playerId = data.identificador;
         const playerDiv = document.getElementById("playerId");
         if (playerDiv) {
           playerDiv.innerText = "Eres el jugador: " + data.identificador;
