@@ -6,6 +6,32 @@ export const UIv1 = UI_BUILDER.init();
 UIv1.initUI = () => {
   const base = document.getElementById(UIv1.uiElements.board);
   base.classList.add("board");
+
+  UIv1.initControls();
+};
+
+UIv1.initControls = () => {
+  let controls = document.getElementById("controls");
+  if (!controls) {
+    controls = document.createElement("div");
+    controls.id = "controls";
+    document.body.appendChild(controls);
+  }
+
+  const moveBtn = document.createElement("button");
+  moveBtn.id = "move-btn";
+  moveBtn.textContent = "Mover";
+  controls.appendChild(moveBtn);
+
+  const shootBtn = document.createElement("button");
+  shootBtn.id = "shoot-btn";
+  shootBtn.textContent = "Disparar";
+  controls.appendChild(shootBtn);
+
+  const rotateBtn = document.createElement("button");
+  rotateBtn.id = "rotate-btn";
+  rotateBtn.textContent = "Rotar";
+  controls.appendChild(rotateBtn);
 };
 
 UIv1.drawBoard = (board) => {
